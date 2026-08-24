@@ -146,15 +146,9 @@
   table.cmp td { padding: 12px; border-bottom: 1px solid var(--line); font-size: 13.5px; vertical-align: top; }
   table.cmp tr:last-child td { border-bottom: none; }
   table.cmp td.plan-name { font-weight: 700; white-space: nowrap; }
-
-  .pick-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .pick-card {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
-    box-shadow: var(--shadow); padding: 16px;
-  }
-  .pick-card .pk-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent2); font-weight: 700; }
-  .pick-card h3 { margin: 6px 0 6px; font-size: 17px; }
-  .pick-card p { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+  table.cmp td ul { margin: 0; padding-left: 16px; }
+  table.cmp td li { margin: 3px 0; }
+  table.cmp td li::marker { color: var(--ink-faint); }
 
   /* ---- plan summary strip ---- */
   .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
@@ -210,7 +204,6 @@
 
   @media (max-width: 560px) {
     .stop-body { padding: 0 16px 16px; }
-    .pick-grid { grid-template-columns: 1fr; }
     .stat-row { grid-template-columns: repeat(2, 1fr); }
     .stop-time { width: 88px; font-size: 11.5px; }
     .stop.transit .stop-time { width: 88px; }
@@ -294,32 +287,70 @@
       </table>
     </div>
 
-    <div class="pick-grid">
-      <div class="pick-card">
-        <div class="pk-label">Plan A</div>
-        <h3>東京駅を起点に、高田馬場でまとめて遊ぶ</h3>
-        <p>集合直後にグランスタ東京でお茶。ボードゲームとマーダーミステリーが高田馬場エリアに集まっているので移動が少ない。夜は豊洲の夜景BBQで締める。</p>
-      </div>
-      <div class="pick-card">
-        <div class="pk-label">Plan B</div>
-        <h3>青山本店のサロン「Heaven」で本格ティータイム</h3>
-        <p>ピエール・エルメの旗艦店で腰を据えて味わいたい派。新宿でマーダーミステリー、世田谷代田で締めのBBQ。</p>
-      </div>
-      <div class="pick-card">
-        <div class="pk-label">Plan C</div>
-        <h3>海辺のビアガーデンでのびのびBBQ</h3>
-        <p>品川で先発合流して身軽に新橋へ。竹芝のシーサイドビアガーデンで締める、移動多めだが解放感重視。</p>
-      </div>
+    <div class="card table-scroll">
+      <table class="cmp">
+        <thead>
+          <tr><th>プラン</th><th>メリット</th><th>デメリット</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="plan-name">A. 東京駅＆高田馬場</td>
+            <td>
+              <ul>
+                <li>集合直後、駅直結のグランスタ東京ですぐお茶できる</li>
+                <li>ボードゲームとマーダーミステリーが高田馬場エリアに集中、移動が少ない</li>
+                <li>夜は豊洲の夜景BBQ（足湯付き）で締められる</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>高田馬場（西）→豊洲（東）と後半で大きく東西移動する</li>
+                <li>解散は21:55頃、3プラン中中間の拘束時間</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="plan-name">B. 青山＆新宿</td>
+            <td>
+              <ul>
+                <li>ピエール・エルメの旗艦店「Heaven」でゆったり本格ティータイム</li>
+                <li>青山→新宿→世田谷代田は距離が近く、移動時間の合計が3プラン中最短</li>
+                <li>解散は21:33頃、3プラン中もっとも早い</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>青山本店は週末混雑しやすく、開店直後を狙うなど動き出しがシビア</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="plan-name">C. 新橋＆大久保</td>
+            <td>
+              <ul>
+                <li>品川先発合流に対応、身軽に新橋へ入れる</li>
+                <li>竹芝のシーサイドビアガーデンは海風を感じる開放的なロケーション</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>新橋→秋葉原→大久保→竹芝と4エリアを回り、3プラン中もっとも移動が多い</li>
+                <li>解散は22:10頃、3プラン中もっとも拘束時間が長い</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
   <!-- ================= PLAN A ================= -->
   <div class="panel panel-a">
     <div class="stat-row">
-      <div class="stat"><div class="stat-label">Area</div><div class="stat-value">東京駅→高田馬場→豊洲</div></div>
-      <div class="stat"><div class="stat-label">カフェ入店</div><div class="stat-value">12:20頃</div></div>
+      <div class="stat"><div class="stat-label">エリア</div><div class="stat-value">東京駅→高田馬場→豊洲</div></div>
+      <div class="stat"><div class="stat-label">集合</div><div class="stat-value">12:03</div></div>
       <div class="stat"><div class="stat-label">BBQ</div><div class="stat-value">夕食・豊洲</div></div>
-      <div class="stat"><div class="stat-label">終了目安</div><div class="stat-value">21:35頃</div></div>
+      <div class="stat"><div class="stat-label">解散</div><div class="stat-value">21:55頃</div></div>
     </div>
 
     <div class="timeline-card">
@@ -355,7 +386,7 @@
         </details>
       </div>
 
-      <div class="stop transit"><span class="stop-time mono">13:30–14:00</span><span>高田馬場へ移動（JR山手線 約25分）</span></div>
+      <div class="stop transit"><span class="stop-time mono">13:30–14:05</span><span>高田馬場へ移動（JR山手線 約25分＋余裕10分）</span></div>
 
       <div class="stop">
         <a class="photo-link" href="https://cafe.gotta2.jp/" target="_blank" rel="noopener">
@@ -364,7 +395,7 @@
         </a>
         <details>
           <summary>
-            <span class="stop-time mono">14:00–15:30</span>
+            <span class="stop-time mono">14:05–15:35</span>
             <span class="stop-title">ボードゲーム @ GOTTA2 CAFE</span>
             <span class="chevron"></span>
           </summary>
@@ -375,11 +406,11 @@
         </details>
       </div>
 
-      <div class="stop transit"><span class="stop-time mono">15:30–15:40</span><span>クインズワルツ高田馬場店へ移動（同エリア徒歩5分）</span></div>
+      <div class="stop transit"><span class="stop-time mono">15:35–15:50</span><span>クインズワルツ高田馬場店へ移動（同エリア徒歩5分＋余裕10分）</span></div>
 
       <details class="stop">
         <summary>
-          <span class="stop-time mono">15:40–18:40</span>
+          <span class="stop-time mono">15:50–18:50</span>
           <span class="stop-title">マーダーミステリー @ クインズワルツ 高田馬場店</span>
           <span class="chevron"></span>
         </summary>
@@ -389,7 +420,7 @@
         </div>
       </details>
 
-      <div class="stop transit"><span class="stop-time mono">18:40–19:20</span><span>豊洲へ移動（JR山手線＋ゆりかもめ 約40分）</span></div>
+      <div class="stop transit"><span class="stop-time mono">18:50–19:40</span><span>豊洲へ移動（JR山手線＋ゆりかもめ 約40分＋余裕10分）</span></div>
 
       <div class="stop">
         <a class="photo-link" href="https://tokyo-toyosu.manyo.co.jp/skydiningbbq2026/" target="_blank" rel="noopener">
@@ -398,7 +429,7 @@
         </a>
         <details>
           <summary>
-            <span class="stop-time mono">19:20–21:35</span>
+            <span class="stop-time mono">19:40–21:55</span>
             <span class="stop-title">BBQ夕食 @ 東京豊洲万葉倶楽部</span>
             <span class="chevron"></span>
           </summary>
@@ -409,17 +440,17 @@
         </details>
       </div>
 
-      <div class="stop transit"><span class="stop-time mono">21:35〜</span><span>解散</span></div>
+      <div class="stop transit"><span class="stop-time mono">21:55〜</span><span>解散</span></div>
     </div>
   </div>
 
   <!-- ================= PLAN B ================= -->
   <div class="panel panel-b">
     <div class="stat-row">
-      <div class="stat"><div class="stat-label">Area</div><div class="stat-value">青山→新宿→世田谷代田</div></div>
-      <div class="stat"><div class="stat-label">カフェ入店</div><div class="stat-value">12:45頃</div></div>
+      <div class="stat"><div class="stat-label">エリア</div><div class="stat-value">青山→新宿→世田谷代田</div></div>
+      <div class="stat"><div class="stat-label">集合</div><div class="stat-value">12:03</div></div>
       <div class="stat"><div class="stat-label">BBQ</div><div class="stat-value">夕食・世田谷代田</div></div>
-      <div class="stat"><div class="stat-label">終了目安</div><div class="stat-value">21:20頃</div></div>
+      <div class="stat"><div class="stat-label">解散</div><div class="stat-value">21:33頃</div></div>
     </div>
 
     <div class="timeline-card">
@@ -435,7 +466,7 @@
         </div>
       </details>
 
-      <div class="stop transit"><span class="stop-time mono">12:03–12:30</span><span>青山へ移動（銀座線・表参道経由 約25分）</span></div>
+      <div class="stop transit"><span class="stop-time mono">12:03–12:38</span><span>青山へ移動（銀座線・表参道経由 約25分＋余裕10分）</span></div>
 
       <div class="stop">
         <a class="photo-link" href="https://www.pierreherme.co.jp/boutique/" target="_blank" rel="noopener">
@@ -444,22 +475,22 @@
         </a>
         <details>
           <summary>
-            <span class="stop-time mono">12:30–14:00</span>
+            <span class="stop-time mono">12:38–14:08</span>
             <span class="stop-title">ピエール・エルメ・パリ 青山本店「Heaven」</span>
             <span class="chevron"></span>
           </summary>
           <div class="stop-body">
             <p class="stop-area">渋谷区神宮前・ラ・ポルト青山 1F/2F</p>
-            <p>1Fパティスリー・2Fサロン・ド・テ「Heaven」を構える旗艦店。週末は行列が出るため開店に近い時間帯を狙って12:45頃には着席。1時間ほど過ごして14:00に退店し、15:00の入店リミットを大きく前倒しで消化。</p>
+            <p>1Fパティスリー・2Fサロン・ド・テ「Heaven」を構える旗艦店。週末は行列が出るため開店に近い時間帯を狙って12:53頃には着席。1時間ほど過ごして14:08に退店し、15:00の入店リミットを大きく前倒しで消化。</p>
           </div>
         </details>
       </div>
 
-      <div class="stop transit"><span class="stop-time mono">14:00–14:30</span><span>新宿へ移動（千代田線＋小田急線 約25分）</span></div>
+      <div class="stop transit"><span class="stop-time mono">14:08–14:43</span><span>新宿へ移動（千代田線＋小田急線 約25分＋余裕10分）</span></div>
 
       <details class="stop">
         <summary>
-          <span class="stop-time mono">14:30–16:00</span>
+          <span class="stop-time mono">14:43–16:13</span>
           <span class="stop-title">ボードゲーム @ ボードゲームと珈琲豆 新宿店</span>
           <span class="chevron"></span>
         </summary>
@@ -471,7 +502,7 @@
 
       <details class="stop">
         <summary>
-          <span class="stop-time mono">16:00–19:00</span>
+          <span class="stop-time mono">16:13–19:13</span>
           <span class="stop-title">マーダーミステリー @ ロストプロダクト 新宿店</span>
           <span class="chevron"></span>
         </summary>
@@ -481,7 +512,7 @@
         </div>
       </details>
 
-      <div class="stop transit"><span class="stop-time mono">19:00–19:20</span><span>世田谷代田へ移動（小田急線 約10分）</span></div>
+      <div class="stop transit"><span class="stop-time mono">19:13–19:33</span><span>世田谷代田へ移動（小田急線 約10分＋余裕10分）</span></div>
 
       <div class="stop">
         <a class="photo-link" href="https://www.spacemarket.com/spaces/daitadesica/" target="_blank" rel="noopener">
@@ -490,7 +521,7 @@
         </a>
         <details>
           <summary>
-            <span class="stop-time mono">19:20–21:20</span>
+            <span class="stop-time mono">19:33–21:33</span>
             <span class="stop-title">BBQ夕食 @ おともさん by ダイタデシカ</span>
             <span class="chevron"></span>
           </summary>
@@ -501,17 +532,17 @@
         </details>
       </div>
 
-      <div class="stop transit"><span class="stop-time mono">21:20〜</span><span>解散</span></div>
+      <div class="stop transit"><span class="stop-time mono">21:33〜</span><span>解散</span></div>
     </div>
   </div>
 
   <!-- ================= PLAN C ================= -->
   <div class="panel panel-c">
     <div class="stat-row">
-      <div class="stat"><div class="stat-label">Area</div><div class="stat-value">新橋→秋葉原→大久保→竹芝</div></div>
-      <div class="stat"><div class="stat-label">カフェ入店</div><div class="stat-value">12:15頃</div></div>
+      <div class="stat"><div class="stat-label">エリア</div><div class="stat-value">新橋→秋葉原→大久保→竹芝</div></div>
+      <div class="stat"><div class="stat-label">集合</div><div class="stat-value">11:59</div></div>
       <div class="stat"><div class="stat-label">BBQ</div><div class="stat-value">夕食・竹芝</div></div>
-      <div class="stat"><div class="stat-label">終了目安</div><div class="stat-value">21:45頃</div></div>
+      <div class="stat"><div class="stat-label">解散</div><div class="stat-value">22:10頃</div></div>
     </div>
 
     <div class="timeline-card">
@@ -527,21 +558,21 @@
         </div>
       </details>
 
-      <div class="stop transit"><span class="stop-time mono">12:00–12:15</span><span>新橋へ移動（JR山手線 約10分）</span></div>
+      <div class="stop transit"><span class="stop-time mono">12:00–12:20</span><span>新橋へ移動（JR山手線 約10分＋余裕10分）</span></div>
 
       <details class="stop">
         <summary>
-          <span class="stop-time mono">12:15–13:30</span>
+          <span class="stop-time mono">12:20–13:35</span>
           <span class="stop-title">サザコーヒー 新橋店</span>
           <span class="chevron"></span>
         </summary>
         <div class="stop-body">
           <p class="stop-area">新橋エリア</p>
-          <p>自家焙煎の本格コーヒーで一息。開店直後の時間帯を狙って12:20頃には着席。15:00の入店リミットに余裕を持って消化。</p>
+          <p>自家焙煎の本格コーヒーで一息。開店直後の時間帯を狙って12:25頃には着席。15:00の入店リミットに余裕を持って消化。</p>
         </div>
       </details>
 
-      <div class="stop transit"><span class="stop-time mono">13:30–14:00</span><span>秋葉原へ移動（JR山手線＋京浜東北線 約25分）</span></div>
+      <div class="stop transit"><span class="stop-time mono">13:35–14:10</span><span>秋葉原へ移動（JR山手線＋京浜東北線 約25分＋余裕10分）</span></div>
 
       <div class="stop">
         <a class="photo-link" href="https://shukaijo.com/" target="_blank" rel="noopener">
@@ -550,7 +581,7 @@
         </a>
         <details>
           <summary>
-            <span class="stop-time mono">14:00–15:30</span>
+            <span class="stop-time mono">14:10–15:40</span>
             <span class="stop-title">ボードゲーム @ 秋葉原集会所</span>
             <span class="chevron"></span>
           </summary>
@@ -561,11 +592,11 @@
         </details>
       </div>
 
-      <div class="stop transit"><span class="stop-time mono">15:30–16:00</span><span>大久保へ移動（JR山手線 約25分）</span></div>
+      <div class="stop transit"><span class="stop-time mono">15:40–16:15</span><span>大久保へ移動（JR山手線 約25分＋余裕10分）</span></div>
 
       <details class="stop">
         <summary>
-          <span class="stop-time mono">16:00–19:00</span>
+          <span class="stop-time mono">16:15–19:15</span>
           <span class="stop-title">マーダーミステリー @ クインズワルツ 大久保店</span>
           <span class="chevron"></span>
         </summary>
@@ -575,7 +606,7 @@
         </div>
       </details>
 
-      <div class="stop transit"><span class="stop-time mono">19:00–19:35</span><span>竹芝・浜松町エリアへ移動（JR山手線＋徒歩 約35分）</span></div>
+      <div class="stop transit"><span class="stop-time mono">19:15–20:00</span><span>竹芝・浜松町エリアへ移動（JR山手線＋徒歩 約35分＋余裕10分）</span></div>
 
       <div class="stop">
         <a class="photo-link" href="https://www.zato.co.jp/restaurant/brauertafel/takeshiba-bbq/" target="_blank" rel="noopener">
@@ -584,7 +615,7 @@
         </a>
         <details>
           <summary>
-            <span class="stop-time mono">19:35–21:45</span>
+            <span class="stop-time mono">20:00–22:10</span>
             <span class="stop-title">BBQ夕食 @ TAKESHIBA BBQ BEER GARDEN</span>
             <span class="chevron"></span>
           </summary>
@@ -595,7 +626,7 @@
         </details>
       </div>
 
-      <div class="stop transit"><span class="stop-time mono">21:45〜</span><span>解散</span></div>
+      <div class="stop transit"><span class="stop-time mono">22:10〜</span><span>解散</span></div>
     </div>
   </div>
 
