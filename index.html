@@ -119,20 +119,17 @@
   #t-ov:checked ~ .tab-nav label[for="t-ov"],
   #t-a:checked ~ .tab-nav label[for="t-a"],
   #t-b:checked ~ .tab-nav label[for="t-b"],
-  #t-c:checked ~ .tab-nav label[for="t-c"],
-  #t-d:checked ~ .tab-nav label[for="t-d"] { color: var(--accent); border-bottom-color: var(--accent); }
+  #t-c:checked ~ .tab-nav label[for="t-c"] { color: var(--accent); border-bottom-color: var(--accent); }
 
   #t-ov:checked ~ .panel-ov,
   #t-a:checked ~ .panel-a,
   #t-b:checked ~ .panel-b,
-  #t-c:checked ~ .panel-c,
-  #t-d:checked ~ .panel-d { display: flex; }
+  #t-c:checked ~ .panel-c { display: flex; }
 
   #t-ov:focus-visible ~ .tab-nav label[for="t-ov"],
   #t-a:focus-visible ~ .tab-nav label[for="t-a"],
   #t-b:focus-visible ~ .tab-nav label[for="t-b"],
-  #t-c:focus-visible ~ .tab-nav label[for="t-c"],
-  #t-d:focus-visible ~ .tab-nav label[for="t-d"] { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  #t-c:focus-visible ~ .tab-nav label[for="t-c"] { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
 
   /* ---- overview table ---- */
   .card {
@@ -234,8 +231,7 @@
     #t-ov:checked ~ .tab-nav label[for="t-ov"],
     #t-a:checked ~ .tab-nav label[for="t-a"],
     #t-b:checked ~ .tab-nav label[for="t-b"],
-    #t-c:checked ~ .tab-nav label[for="t-c"],
-    #t-d:checked ~ .tab-nav label[for="t-d"] {
+    #t-c:checked ~ .tab-nav label[for="t-c"] {
       background: var(--accent-soft); border-color: var(--accent);
     }
   }
@@ -257,14 +253,12 @@
   <input class="tab-radio" type="radio" name="tab" id="t-a">
   <input class="tab-radio" type="radio" name="tab" id="t-b">
   <input class="tab-radio" type="radio" name="tab" id="t-c">
-  <input class="tab-radio" type="radio" name="tab" id="t-d">
 
   <div class="tab-nav">
     <label for="t-ov">概要比較</label>
     <label for="t-a">プランA・東京駅＆高田馬場</label>
     <label for="t-b">プランB・青山＆新宿</label>
     <label for="t-c">プランC・新橋＆大久保</label>
-    <label for="t-d">プランD・熱海コテージ泊</label>
   </div>
 
   <!-- ================= OVERVIEW ================= -->
@@ -296,13 +290,6 @@
             <td>クインズワルツ 大久保店</td>
             <td>TAKESHIBA BBQ BEER GARDEN</td>
           </tr>
-          <tr>
-            <td class="plan-name">D. 熱海コテージ泊（1泊）</td>
-            <td>東京駅 → 熱海・網代 → 翌日解散</td>
-            <td>グランスタ東京で軽く</td>
-            <td>－（移動時間確保のため省略）</td>
-            <td>ANGO ATAMI I（コテージ・屋根付きBBQ）</td>
-          </tr>
         </tbody>
       </table>
     </div>
@@ -322,11 +309,6 @@
         <div class="pk-label">Plan C</div>
         <h3>海辺のビアガーデンでのびのびBBQ</h3>
         <p>品川で先発合流して身軽に新橋へ。竹芝のシーサイドビアガーデンで締める、移動多めだが解放感重視。</p>
-      </div>
-      <div class="pick-card">
-        <div class="pk-label">Plan D</div>
-        <h3>熱海のコテージを一棟貸切、1泊でBBQ三昧</h3>
-        <p>東京駅から新幹線こだまで約50分の熱海・網代エリア。日帰りのA〜Cと違い一泊し、屋根付きバルコニーでゆっくりBBQ。移動が長くなる分、マーダーミステリーとボードゲームは組み込まず自由時間を確保。</p>
       </div>
     </div>
   </div>
@@ -614,111 +596,6 @@
       </div>
 
       <div class="stop transit"><span class="stop-time mono">21:45〜</span><span>解散</span></div>
-    </div>
-  </div>
-
-  <!-- ================= PLAN D ================= -->
-  <div class="panel panel-d">
-    <div class="stat-row">
-      <div class="stat"><div class="stat-label">Area</div><div class="stat-value">東京駅→熱海・網代（1泊）</div></div>
-      <div class="stat"><div class="stat-label">移動時間</div><div class="stat-value">東京から約1.5時間</div></div>
-      <div class="stat"><div class="stat-label">BBQ</div><div class="stat-value">夕食・網代のコテージ</div></div>
-      <div class="stat"><div class="stat-label">解散</div><div class="stat-value">翌12日（月）昼頃</div></div>
-    </div>
-
-    <div class="timeline-card">
-      <details class="stop" open>
-        <summary>
-          <span class="stop-time mono">08:06–12:03</span>
-          <span class="stop-title">のぞみ86号で広島から合流</span>
-          <span class="chevron"></span>
-        </summary>
-        <div class="stop-body">
-          <p class="stop-area">広島駅 08:06発 → 東京駅 12:03着</p>
-          <p>広島からの1名はこの便で東京駅に到着。他メンバーは東京駅で出迎え、そのまま合流する。</p>
-        </div>
-      </details>
-
-      <div class="stop transit"><span class="stop-time mono">12:03–12:15</span><span>東京駅構内でグランスタ東京へ移動</span></div>
-
-      <details class="stop">
-        <summary>
-          <span class="stop-time mono">12:15–13:00</span>
-          <span class="stop-title">グランスタ東京で軽食・コーヒー</span>
-          <span class="chevron"></span>
-        </summary>
-        <div class="stop-body">
-          <p class="stop-area">東京駅構内・グランスタ東京</p>
-          <p>この後の新幹線移動があるため、ここは腰を据えず軽めに。45分ほどでコーヒーと軽い食事を済ませる。</p>
-        </div>
-      </details>
-
-      <div class="stop transit"><span class="stop-time mono">13:00–13:20</span><span>東京駅 東海道新幹線ホームへ移動</span></div>
-
-      <details class="stop">
-        <summary>
-          <span class="stop-time mono">13:20頃–14:10頃</span>
-          <span class="stop-title">東海道新幹線（こだま号）で熱海駅へ</span>
-          <span class="chevron"></span>
-        </summary>
-        <div class="stop-body">
-          <p class="stop-area">東京駅 → （品川駅からも乗車可） → 熱海駅、所要約50分</p>
-          <p>広島から合流するメンバーに合わせて東京駅始発でまとめて乗車。品川発でも同じ列車に乗れるため、品川集合に切り替えても対応可能。座席は指定席で事前確保がおすすめ。</p>
-        </div>
-      </details>
-
-      <details class="stop">
-        <summary>
-          <span class="stop-time mono">14:10頃–14:35頃</span>
-          <span class="stop-title">熱海駅からタクシーで現地へ</span>
-          <span class="chevron"></span>
-        </summary>
-        <div class="stop-body">
-          <p class="stop-area">熱海駅 → 網代エリア、タクシーで約20〜25分</p>
-          <p>網代駅からなら車で約5分の距離。施設側の送迎有無は要事前確認で、なければ熱海駅からタクシーを利用する。</p>
-        </div>
-      </details>
-
-      <details class="stop">
-        <summary>
-          <span class="stop-time mono">14:35–18:00</span>
-          <span class="stop-title">チェックイン・自由時間</span>
-          <span class="chevron"></span>
-        </summary>
-        <div class="stop-body">
-          <p class="stop-area">ANGO ATAMI I（一棟貸切）</p>
-          <p>マーダーミステリーやボードゲームカフェは移動時間の都合で組み込まず、この時間を周辺散策・買い出し・のんびり過ごす自由時間にあてる。ボードゲームを楽しみたい場合は各自持参してコテージ内で遊ぶ想定。</p>
-        </div>
-      </details>
-
-      <div class="stop">
-        <details open>
-          <summary>
-            <span class="stop-time mono">18:00–21:00</span>
-            <span class="stop-title">BBQ夕食 @ ANGO ATAMI I</span>
-            <span class="chevron"></span>
-          </summary>
-          <div class="stop-body">
-            <p class="stop-area">静岡県熱海市・南熱海／網代エリア</p>
-            <p>屋根付きの1階バルコニーでBBQ。グリル・トング・紙皿・ガス缶などの器材一式は無料included、食材と調味料は各自持参または現地までに買い出しする。最大8名まで宿泊可能な一棟貸切コテージで、キッチン・冷蔵庫・電子レンジ・炊飯器あり（素泊まり）。</p>
-            <p><a href="https://www.aco.co.jp/id/66604.html" target="_blank" rel="noopener">施設情報（ACO） ↗</a></p>
-          </div>
-        </details>
-      </div>
-
-      <div class="stop transit"><span class="stop-time mono">21:00〜</span><span>宿泊・歓談（持参のボードゲームなど任意）</span></div>
-
-      <details class="stop">
-        <summary>
-          <span class="stop-time mono">翌10/12（月）10:00頃</span>
-          <span class="stop-title">チェックアウト・東京方面へ</span>
-          <span class="chevron"></span>
-        </summary>
-        <div class="stop-body">
-          <p class="stop-area">現地 → 熱海駅 → 東京駅／品川駅</p>
-          <p>チェックアウト後、往路と逆ルートで熱海駅から新幹線こだま号で東京・品川方面へ。昼頃には解散できる見込み。</p>
-        </div>
-      </details>
     </div>
   </div>
 
